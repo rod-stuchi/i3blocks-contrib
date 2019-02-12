@@ -11,8 +11,9 @@
 #include <unistd.h>
 #include <getopt.h>
 
-#define RED "#FF7373"
-#define ORANGE "#FFA500"
+#define RED "#FF0044"
+#define WHITE "#FFFFFF"
+#define ORANGE "#FF9E02"
 
 typedef unsigned long long int ulli;
 
@@ -35,14 +36,14 @@ void display(const char *label, double used,
              int const warning, int const critical, int const decimals)
 {
   if (critical != 0 && used > critical) {
-    printf("%s<span color='%s'>", label, RED);
+    printf("%s<span background='%s' foreground='%s' weight='bold'> ", label, RED, WHITE);
   } else if (warning != 0 && used > warning) {
     printf("%s<span color='%s'>", label, ORANGE);
   } else {
     printf("%s<span>", label);
   }
 
-  printf("%*.*lf%%</span>\n", decimals + 3 + 1, decimals, used);
+  printf("%*.*lf%% </span>\n", decimals + 3 + 1, decimals, used);
 }
 
 ulli get_usage(ulli *used_jiffies)
