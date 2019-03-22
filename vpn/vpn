@@ -1,0 +1,7 @@
+#! /bin/bash
+
+if [ -d "/sys/class/net/tun0" ]; then
+  echo "<span size='large' color='#62c5ff'> </span><span color='#62c5ff' weight='bold'>VPN</span>"
+else
+  echo "<span color='#f44242'>Off</span>"
+fi

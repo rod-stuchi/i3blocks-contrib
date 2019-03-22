@@ -1,0 +1,8 @@
+#! /bin/bash
+
+case "$BLOCK_BUTTON" in
+    2) konsole -name floatweather --hold -e "curl wttr.in/-23.6472849,-46.6596154\?2F"
+esac
+
+# curl https://wttr.in/Jabaquara%20BR\?format\=1
+curl wttr.in/-23.6472849,-46.6596154\?format\=2
